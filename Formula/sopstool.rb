@@ -3,7 +3,7 @@ class Sopstool < Formula
   homepage "https://github.com/Ibotta/sopstool"
   url "https://github.com/Ibotta/sopstool/releases/download/v0.3.2/sopstool_darwin.tar.gz"
   version "0.3.2"
-  sha256 "ce11c06c47e426b3e8df830eb6705ffaa2e2dde41c90d1ca8ccf9c63e6e4a7f6"
+  sha256 "f83f4268c0681b5e54e3dfd6d5c86191910800c7dce6e4532ab29f3cf1c416da"
   
   depends_on "sops"
 
