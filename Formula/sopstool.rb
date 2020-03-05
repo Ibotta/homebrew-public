@@ -2,14 +2,17 @@
 class Sopstool < Formula
   desc "A multi-file wrapper for Mozilla sops"
   homepage "https://github.com/Ibotta/sopstool"
-  version "0.4.0"
+  version "0.4.1"
+  bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/Ibotta/sopstool/releases/download/v0.4.0/sopstool_darwin.tar.gz"
-    sha256 "8a1594ff392252decbcfa1ec0ca52f16c9fefe1dfbdd197899342633f83bb176"
+    url "https://github.com/Ibotta/sopstool/releases/download/v0.4.1/sopstool_darwin.tar.gz"
+    sha256 "b135037bbe7f5ec2abce39d1ef629d8593cfbc5cd683a48faa4bef8e5f6dbe14"
   elsif OS.linux?
-    url "https://github.com/Ibotta/sopstool/releases/download/v0.4.0/sopstool_linux.tar.gz"
-    sha256 "5de9f4cbe44a16b1415f3c01052c69dd87d96ac3510591ccb88a1cb933909a7e"
+    if Hardware::CPU.intel?
+      url "https://github.com/Ibotta/sopstool/releases/download/v0.4.1/sopstool_linux.tar.gz"
+      sha256 "161f35bd4eb6c9db7167fd06c0a516ca4c82a30c549dfed0b4affa15e6cdf0c0"
+    end
   end
   
   depends_on "sops"
