@@ -7,11 +7,11 @@ class Sopstool < Formula
 
   if OS.mac?
     url "https://github.com/Ibotta/sopstool/releases/download/v0.4.1/sopstool_darwin.tar.gz"
-    sha256 "ddbe9e7ea702f97fc7d20059e08bc74f693c257edd6d9c7a3a86ec3f83f8fe65"
+    sha256 "9d9f663189d44bde571aa11edde877b36539b49b56041a9e5edae3123b14ea68"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/Ibotta/sopstool/releases/download/v0.4.1/sopstool_linux.tar.gz"
-      sha256 "5f7874fa2dad01a10b1805b5c7c5f89a50d97535fe51165f7db24ba7ba18cec1"
+      sha256 "def11f66954ac6e68d21c03668003e50ab658a854d1613daba977c55d4befbbe"
     end
   end
   
