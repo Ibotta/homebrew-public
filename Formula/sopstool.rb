@@ -5,12 +5,20 @@
 class Sopstool < Formula
   desc "A multi-file wrapper for Mozilla sops"
   homepage "https://github.com/Ibotta/sopstool"
-  version "0.4.4"
+  version "1.0.0"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_darwin_arm64.tar.gz"
+      sha256 "20396b0ec328acd0b7ad2a22d182d334321e30f83a4aeaa178422ca987e4df85"
+
+      def install
+        bin.install "sopstool"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v0.4.4/sopstool_darwin.tar.gz"
-      sha256 "1853372a9c834812abf640ffb162644e27a9780631cb6d9f0067a43078fc5c69"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_darwin_amd64.tar.gz"
+      sha256 "f0142bd8e9a3bddfed9acaa0ca802bf43786c358e39efd1504115daf4ca8a186"
 
       def install
         bin.install "sopstool"
@@ -19,9 +27,17 @@ class Sopstool < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_linux_arm64.tar.gz"
+      sha256 "2600b2bfb8b0d21e4178095d2eab3e5ecbc7073ecc4ab84db6d6f837855597b7"
+
+      def install
+        bin.install "sopstool"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v0.4.4/sopstool_linux.tar.gz"
-      sha256 "b361595568943e07a047f8928c4c9128c3bad99924e24582f53ebf1c11231266"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_linux_amd64.tar.gz"
+      sha256 "a66b60b12ed8cdb5cdb169b06ea0c69630981dc05ae2484dfb5a2f4223af5efc"
 
       def install
         bin.install "sopstool"
