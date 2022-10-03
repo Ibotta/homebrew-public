@@ -5,20 +5,22 @@
 class Sopstool < Formula
   desc "A multi-file wrapper for Mozilla sops"
   homepage "https://github.com/Ibotta/sopstool"
-  version "1.0.0"
+  version "1.1.0"
+
+  depends_on "sops"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_darwin_arm64.tar.gz"
-      sha256 "20396b0ec328acd0b7ad2a22d182d334321e30f83a4aeaa178422ca987e4df85"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.0/sopstool_darwin_arm64.tar.gz"
+      sha256 "082cca61ad08388328cce89c33c24bbef041c2a043d70b83ff1fd48d5268dcc4"
 
       def install
         bin.install "sopstool"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_darwin_amd64.tar.gz"
-      sha256 "f0142bd8e9a3bddfed9acaa0ca802bf43786c358e39efd1504115daf4ca8a186"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.0/sopstool_darwin_amd64.tar.gz"
+      sha256 "2ed4a9dbc82e14bab0af59501f90b18f1690d0a3b43dac9eb76543825415104d"
 
       def install
         bin.install "sopstool"
@@ -27,25 +29,23 @@ class Sopstool < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_linux_arm64.tar.gz"
-      sha256 "2600b2bfb8b0d21e4178095d2eab3e5ecbc7073ecc4ab84db6d6f837855597b7"
+    if Hardware::CPU.intel?
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.0/sopstool_linux_amd64.tar.gz"
+      sha256 "657daac680584658ff78539ce1c7581c77039599fad0d941a7374138bba2ea5d"
 
       def install
         bin.install "sopstool"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.0.0/sopstool_linux_amd64.tar.gz"
-      sha256 "a66b60b12ed8cdb5cdb169b06ea0c69630981dc05ae2484dfb5a2f4223af5efc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.0/sopstool_linux_arm64.tar.gz"
+      sha256 "3723c8e30dc897e5d96e0bc4d78993ed2113b000b8906d48cee43489ad54e3f5"
 
       def install
         bin.install "sopstool"
       end
     end
   end
-
-  depends_on "sops"
 
   test do
     system "#{bin}/sopstool version"
