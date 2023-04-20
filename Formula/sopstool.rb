@@ -5,22 +5,22 @@
 class Sopstool < Formula
   desc "A multi-file wrapper for Mozilla sops"
   homepage "https://github.com/Ibotta/sopstool"
-  version "1.1.2"
+  version "1.1.3"
 
   depends_on "sops"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.2/sopstool_darwin_arm64.tar.gz"
-      sha256 "0bd046cd902f715d7e0663c6fe8ed4f1c625a9531ff4939aaa5e5c701a316d16"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.3/sopstool_darwin_arm64.tar.gz"
+      sha256 "0fa3cf909d7748337b42641c1c81fbea0f2f300dd63082a024c0fc2de411e6e9"
 
       def install
         bin.install "sopstool"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.2/sopstool_darwin_amd64.tar.gz"
-      sha256 "1b1cfbc4689f410720ded5a70e6fc2c2114a3cfeaa948b9b297f0b1d4f5c9b5f"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.3/sopstool_darwin_amd64.tar.gz"
+      sha256 "b9c949cf85b1c7c25268187295f56aec2ae1bc86dd3b0457cbf2944c51966db9"
 
       def install
         bin.install "sopstool"
@@ -30,16 +30,16 @@ class Sopstool < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.2/sopstool_linux_amd64.tar.gz"
-      sha256 "ce3667375f6297f5ec0fb09d5d58a0c5911761fec236cfcc1e72867aae20d165"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.3/sopstool_linux_amd64.tar.gz"
+      sha256 "c0c8f586d7459eb24310462ff52b6c534aa32db53a43f604dbecafc55f632a60"
 
       def install
         bin.install "sopstool"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.2/sopstool_linux_arm64.tar.gz"
-      sha256 "f168788c8eb43f83c0a189fcac1826165a0bbf29d352a159848a108251317853"
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.1.3/sopstool_linux_arm64.tar.gz"
+      sha256 "0f7d3b82848753bd890858d6c90e25a86b64f519d8d38650c445a8eab5038aac"
 
       def install
         bin.install "sopstool"
