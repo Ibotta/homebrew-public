@@ -10,17 +10,23 @@ class Sopstool < Formula
   depends_on "sops"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.2.1/sopstool_darwin_arm64.tar.gz"
-      sha256 "ba57ad266d2fb0323ae02f4d71d40812fa358193b2466425db2198ec71d76d8c"
+    url "https://github.com/Ibotta/sopstool/releases/download/v1.2.1/sopstool_darwin_all.tar.gz"
+    sha256 "95b6d1973d7c613d3e831facc90191ad4383ab4167d1001e2a0d75cf9dbba835"
+
+    def install
+      bin.install "sopstool"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/Ibotta/sopstool/releases/download/v1.2.1/sopstool_linux_amd64.tar.gz"
+      sha256 "14709ea5a074deed85caea6561c8278b9f0b999eea24b552d09af890b6544a1c"
 
       def install
         bin.install "sopstool"
       end
     end
-  end
-
-  on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Ibotta/sopstool/releases/download/v1.2.1/sopstool_linux_arm64.tar.gz"
       sha256 "94be05253c4f5156b82643132749e9fa9e2546808bbecc7f86b4f07dbe3c447d"

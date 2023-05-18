@@ -1,0 +1,4 @@
+name: homebrew-public
+description: Homebrew public open-source taps
+type: tool
+data_classification: 3
