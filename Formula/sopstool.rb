@@ -11,8 +11,8 @@ class Sopstool < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/Ibotta/sopstool/releases/download/v1.2.1/sopstool_darwin_arm64.tar.gz"
-      sha256 "ba57ad266d2fb0323ae02f4d71d40812fa358193b2466425db2198ec71d76d8c"
+      url "https://github.com/Ibotta/sopstool/archive/refs/tags/v1.2.3.tar.gz"
+      sha256 "bed5a9bc6d89394e2d1f6159ac1c35e53ea79f02d2c0e74d3a1d1be76fa60c02"
 
       def install
         bin.install "sopstool"
